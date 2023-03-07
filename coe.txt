@@ -1,1 +1,2 @@
 Fala aí man, beleza?
+Que isso, me espionando. Tava testando o cli.
