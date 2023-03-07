@@ -1,0 +1,177 @@
+Microsoft Windows [versão 10.0.19044.2604]
+(c) Microsoft Corporation. Todos os direitos reservados.
+
+C:\Users\OPAL-03>git --version
+git version 2.39.2.windows.1
+
+C:\Users\OPAL-03\Documents\Gilbert>echo "#Demo_repo" >> README.md
+
+C:\Users\OPAL-03\Documents\Gilbert>mkdir Demo_rep
+
+C:\Users\OPAL-03\Documents\Gilbert>cd Demo_rep
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>move ..\README.md .
+        1 arquivo(s) movido(s).
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>dir
+ O volume na unidade C não tem nome.
+ O Número de Série do Volume é CEFA-7FE9
+
+ Pasta de C:\Users\OPAL-03\Documents\Gilbert\Demo_rep
+
+03/07/2023  10:52 AM    <DIR>          .
+03/07/2023  10:52 AM    <DIR>          ..
+03/07/2023  10:47 AM                15 README.md
+               1 arquivo(s)             15 bytes
+               2 pasta(s)   204,753,989,632 bytes disponíveis
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git init
+Initialized empty Git repository in C:/Users/OPAL-03/Documents/Gilbert/Demo_rep/.git/
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git add README.md
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git commit -m "first commit -- adding readme"
+[master (root-commit) 485f182] first commit -- adding readme
+ Committer: unknown <OPAL-03@WS3.ad.coe.ufrj.br>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly. Run the
+following command and follow the instructions in your editor to edit
+your configuration file:
+
+    git config --global --edit
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git branch -M main
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote add origin git@github.com:MateusGilbert/Demo_repo.git
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote add origin git@github.com:MateusGilbert/Demo_repo.git
+error: remote origin already exists.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git push -u origin main
+git@github.com: Permission denied (publickey).
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote add origin https://github.com/MateusGilbert/Demo_repo.git
+error: remote origin already exists.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote set-url origin https://github.com/MateusGilbert/Demo_repo.git
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 245 bytes | 245.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/MateusGilbert/Demo_repo.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git pull https://github.com/MateusGilbert/Demo_repo.git
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 755 bytes | 188.00 KiB/s, done.
+From https://github.com/MateusGilbert/Demo_repo
+ * branch            HEAD       -> FETCH_HEAD
+Updating 485f182..2939d75
+Fast-forward
+ example.py | 6 ++++++
+ 1 file changed, 6 insertions(+)
+ create mode 100644 example.py
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>type example.py
+#this is an example file
+
+print('Hello world!')
+for i in range(10):
+      print('*'*(i+1))
+print('Good bye')
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>echo "# New line" >> example.py
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>type example.py
+#this is an example file
+
+print('Hello world!')
+for i in range(10):
+      print('*'*(i+1))
+print('Good bye')
+"# New line"
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git push -u origin main
+Everything up-to-date
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git commit -m "Updating example.py" main
+error: pathspec 'main' did not match any file(s) known to git
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git commit -m "Updating example.py"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   example.py
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git ls-files
+README.md
+example.py
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git ls-files -m
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote update
+remote: Enumerating objects: 5, done.
+remote: Counting objects: 100% (5/5), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 1), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 701 bytes | 175.00 KiB/s, done.
+From https://github.com/MateusGilbert/Demo_repo
+   c1a78fe..6fa90c9  main       -> origin/main
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git status -uno
+On branch main
+Your branch is behind 'origin/main' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit (use -u to show untracked files)
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git show-branch *master
+error: no matching refs with *master
+No revs to be shown.
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git remote -v update
+POST git-upload-pack (196 bytes)
+From https://github.com/MateusGilbert/Demo_repo
+ = [up to date]      main       -> origin/main
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>git pull https://github.com/MateusGilbert/Demo_repo.git
+From https://github.com/MateusGilbert/Demo_repo
+ * branch            HEAD       -> FETCH_HEAD
+Updating c1a78fe..6fa90c9
+Fast-forward
+ example.py | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+C:\Users\OPAL-03\Documents\Gilbert\Demo_rep>
